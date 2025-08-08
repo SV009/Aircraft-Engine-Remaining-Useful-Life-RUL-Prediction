@@ -92,35 +92,23 @@ Best config example: C=50, epsilon=1.
 | FD004   | 62.0252         | 41.0824   |
 
 4. CNN + LSTM Hybrid Model
+
+The CNN + LSTM hybrid model leverages convolutional layers to automatically extract local temporal patterns from multivariate sensor data, followed by an LSTM layer to capture long-term dependencies. This architecture is well-suited for Remaining Useful Life (RUL) prediction as it combines feature extraction and sequence modeling in a single framework.
+
+
 Input: Shape (14 sensors, 40 timesteps, 1 channel)
 
-CNN Layers:
+| CNN Filters (Conv1, Conv2) | LSTM Hidden Size | Dataset | Test RMSE      |
+| -------------------------- | ---------------- | ------- | -------------- |
+| (16, 32)                   | 32               | FD001   | 19.4297        |
+|                            |                  | FD002   | *To be filled* |
+|                            |                  | FD003   | *To be filled* |
+|                            |                  | FD004   | *To be filled* |
+| (32, 64)                   | 32               | FD001   | 18.9118        |
+|                            |                  | FD002   | *To be filled* |
+|                            |                  | FD003   | *To be filled* |
+|                            |                  | FD004   | *To be filled* |
 
-Conv2D(16) → Conv2D(32) (or Conv2D(32) → Conv2D(64) in variant)
-
-Kernel size: 3×1, Pool size: 2×1
-
-LSTM Layer: Hidden size 32
-
-Fully connected output layer for RUL prediction.
-
-CNN (16, 32) + LSTM (32)
-Epochs: 30
-
-Batch size: 64
-
-FD001 Test RMSE: 19.4297
-
-FD002–FD004: To be filled
-
-CNN (32, 64) + LSTM (32)
-Epochs: 30
-
-Batch size: 64
-
-FD001 Test RMSE: 18.9118
-
-FD002–FD004: To be filled
 
 
 ## Key Insights
