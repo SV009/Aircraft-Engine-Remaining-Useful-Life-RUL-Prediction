@@ -100,14 +100,14 @@ Input: Shape (14 sensors, 40 timesteps, 1 channel)
 
 | CNN Filters (Conv1, Conv2) | LSTM Hidden Size | Dataset | Test RMSE      |
 | -------------------------- | ---------------- | ------- | -------------- |
-| (16, 32)                   | 32               | FD001   | 19.4297        |
-|                            |                  | FD002   | *To be filled* |
-|                            |                  | FD003   | *To be filled* |
-|                            |                  | FD004   | *To be filled* |
-| (32, 64)                   | 32               | FD001   | 18.9118        |
-|                            |                  | FD002   | *To be filled* |
-|                            |                  | FD003   | *To be filled* |
-|                            |                  | FD004   | *To be filled* |
+| (16, 32)                   | 32               | FD001   | 21.2091        |
+|                            |                  | FD002   | 29.0184        |
+|                            |                  | FD003   | 33.9305        |
+|                            |                  | FD004   | 39.3851        |
+| (32, 64)                   | 32               | FD001   | 17.3546        |
+|                            |                  | FD002   | 29.3076        |
+|                            |                  | FD003   | 34.0634        |
+|                            |                  | FD004   | 49.5580        |
 
 
 
