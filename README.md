@@ -112,13 +112,38 @@ Input: Shape (14 sensors, 40 timesteps, 1 channel)
 
 
 ## Key Insights
-SVR generally achieved the lowest RMSE for FD001 and FD003.
 
-Random Forest performed well on FD002 and FD004.
+FD001 – Simple Operating Conditions
 
-CNN+LSTM showed promising results for FD001 and is expected to improve further with hyperparameter tuning for other datasets.
+Best model: CNN + LSTM (32,64) filters with LSTM hidden size 32 (RMSE 17.35).
 
-Datasets with multiple operating conditions (FD002, FD004) and multiple fault modes (FD003, FD004) are more challenging, leading to higher RMSE.
+Outperforms LR, RF, and SVR by a significant margin, showing the hybrid model’s strength in learning both local temporal patterns (via CNN) and long-term dependencies (via LSTM).
+
+FD002 – Moderate Complexity
+
+Top performer: CNN + LSTM (16,32) with RMSE 29.02, only slightly better than RF and SVR.
+
+Gains from deep learning are less pronounced here, suggesting that classical ML models remain competitive when operational variability increases.
+
+FD003 – Similar to FD001 but with Different Failure Modes
+
+RF and CNN + LSTM perform comparably, with RMSE around 33–34.
+
+Indicates that hybrid architectures do not always dominate, and well-tuned traditional models can match performance.
+
+FD004 – Most Complex Dataset
+
+CNN + LSTM (16,32) achieves RMSE 39.38, better than (32,64) (RMSE 49.55) but still trailing RF in stability for this dataset.
+
+Performance drop in (32,64) configuration suggests possible overfitting to simpler datasets and weaker generalization to high variability.
+
+Overall Trends
+
+CNN + LSTM excels in FD001 and remains competitive in FD002 and FD003 but struggles with FD004.
+
+Random Forest remains a strong baseline across datasets.
+
+No single model wins universally — choice should consider dataset complexity, variability, and available compute resources.
 
 ## References
 NASA C-MAPSS Dataset: https://www.nasa.gov/content/prognostics-center-of-excellence-data-set-repository
