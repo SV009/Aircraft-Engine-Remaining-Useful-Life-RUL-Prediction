@@ -113,6 +113,14 @@ Input: Shape (14 sensors, 40 timesteps, 1 channel)
 
 ## Key Insights
 
+| Dataset   | Linear Regression | Random Forest | SVR   | CNN+LSTM (16,32) | CNN+LSTM (32,64) |
+| --------- | ----------------- | ------------- | ----- | ---------------- | ---------------- |
+| **FD001** | 37.45             | 22.41         | 27.59 | **21.21**        | **17.35**        |
+| **FD002** | 55.60             | 31.12         | 29.54 | **29.02**        | 29.31            |
+| **FD003** | 40.90             | **33.18**     | 33.77 | 33.93            | 34.06            |
+| **FD004** | 60.47             | **37.56**     | 40.22 | **39.39**        | 49.56            |
+
+
 ### FD001 – Simple Operating Conditions
 
 Best model: CNN + LSTM (32,64) filters with LSTM hidden size 32 (RMSE 17.35).
